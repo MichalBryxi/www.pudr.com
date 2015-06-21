@@ -1,0 +1,26 @@
+<div class="row">
+  {{#each sortedProjects as |project|}}
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="{{project.image}}">
+        <div class="caption">
+          <h3>
+            <a href="{{project.url}}">
+              {{project.name}}
+            </a>
+          </h3>
+          <p>{{project.description}}</p>
+          {{#link-to 'project.edit' project class="edit-button"}}
+            {{fa-icon 'pencil'}}
+          {{/link-to}}
+        </div>
+      </div>
+    </div>
+
+  {{/each}}
+</div>
+
+<a {{action "addProject"}} class="add-button">
+  {{fa-icon "plus"}}
+  Add project
+</a>

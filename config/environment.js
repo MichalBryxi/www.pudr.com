@@ -4,8 +4,15 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'www',
     environment: environment,
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com https://*.firebaseio.com",
+      'font-src': "'self' data: use.typekit.net fonts.gstatic.com fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com"
+    },
+    firebase: 'https://pudr.firebaseio.com/',
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

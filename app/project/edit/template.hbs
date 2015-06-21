@@ -1,0 +1,28 @@
+{{#with attrs.project as |p|}}
+  <div class="form-group">
+    <label>Name</label>
+    {{input value=p.name placeholder="My useless project" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    {{textarea value=p.description placeholder="Yup, it's mine..." class="form-control" rows="10"}}
+  </div>
+
+  <div class="form-group">
+    <label>URL</label>
+    {{input value=p.url placeholder="http://placekitten.com/" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Image URL</label>
+    {{input value=p.image placeholder="http://placekitten.com/g/200/300" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Order</label>
+    {{input value=p.order placeholder="100" class="form-control"}}
+  </div>
+
+  <button {{action "updateProject"}} class="btn btn-primary">Save</button>
+{{/with}}
